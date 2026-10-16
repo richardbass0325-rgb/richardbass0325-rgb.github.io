@@ -172,7 +172,7 @@ input[type=text]{background:#000;border:1px solid #00ff66;color:#00ff66;font-fam
 @media(max-width:700px){.title-silhouette{right:-60px;opacity:.4}.title-stamp{font-size:7px;top:8px}.title-stamp-left{left:10px}.title-stamp-right{right:10px}.title-bottom-line{left:10px;right:10px;font-size:7px}.title-header{font-size:clamp(36px,10vw,60px)}.title-sub{font-size:8px;letter-spacing:1.5px}.controls-grid{grid-template-columns:1fr 1fr;gap:9px;font-size:9px}.story-text{font-size:11px}.title-warning{line-height:1.6}.title-whisper{font-size:9px;letter-spacing:4px;bottom:38px}.crt-body{grid-template-columns:1fr}}
 
 /* JUMPSCARE */
-#jumpscare-overlay{position:absolute;inset:0;background:#020000;z-index:30;display:none;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;isolation:isolate;animation:jsShake 0.06s steps(2,end) infinite}
+#jumpscare-overlay{position:absolute;inset:0;background:#020000;z-index:100;display:none;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;isolation:isolate;pointer-events:none;animation:jsShake 0.06s steps(2,end) infinite}
 @keyframes jsShake{0%{transform:translate(0,0)}25%{transform:translate(-4px,3px)}50%{transform:translate(3px,-4px)}75%{transform:translate(-2px,2px)}100%{transform:translate(2px,1px)}}
 #jumpscare-overlay:before{content:"";position:absolute;inset:0;z-index:9;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.16) 3px),radial-gradient(ellipse,transparent 10%,rgba(0,0,0,.96) 100%);mix-blend-mode:screen}
 .jumpscare-flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:8;pointer-events:none;animation:scareFlash 3s steps(1,end) both}
@@ -262,15 +262,15 @@ input[type=text]{background:#000;border:1px solid #00ff66;color:#00ff66;font-fam
 #title-screen .title-heartbeat{animation:hbPulse .62s ease-in-out infinite;background:radial-gradient(ellipse at 50% 50%,transparent 18%,rgba(255,0,0,.88) 100%)}
 #title-screen .title-whisper{animation:whisperBlur 1.15s ease-in-out infinite;text-shadow:0 0 24px #f00,0 0 65px #f00;}
 #jumpscare-overlay.scare-active{animation:nightmareShake .035s steps(2,end) infinite;}
-#jumpscare-overlay.scare-active #jumpscare-face{animation:nightmareLunge 2.2s cubic-bezier(.04,.84,.08,1) both;}
-#jumpscare-overlay.scare-active .jumpscare-flash{animation:nightmareFlash 2.2s steps(1,end) both;}
+#jumpscare-overlay.scare-active #jumpscare-face{animation:nightmareLunge 2.65s cubic-bezier(.04,.84,.08,1) both;}
+#jumpscare-overlay.scare-active .jumpscare-flash{animation:nightmareFlash 2.65s steps(1,end) both;}
 #jumpscare-overlay.scare-active .jumpscare-static{opacity:.9;animation:staticJitter .018s steps(2,end) infinite;}
 #jumpscare-overlay.scare-active .creature-head{filter:contrast(1.8) saturate(1.8) drop-shadow(0 0 45px #f00);}
 #jumpscare-overlay.scare-active .creature-eye{box-shadow:0 0 40px 18px #f00,0 0 90px 35px #a00;}
 #jumpscare-overlay.scare-active .creature-mouth{animation:mouthNightmare .12s steps(2,end) infinite alternate;}
 #jumpscare-overlay.scare-active .jumpscare-caption{font-size:clamp(26px,5vw,58px);letter-spacing:clamp(4px,1.5vw,20px);animation:captionGlitch .035s steps(2,end) infinite;}
 @keyframes nightmareShake{0%{transform:translate(0,0) scale(1.02)}25%{transform:translate(-12px,8px) scale(1.04)}50%{transform:translate(10px,-11px) scale(1.01)}75%{transform:translate(-8px,-4px) scale(1.05)}100%{transform:translate(11px,5px) scale(1.02)}}
-@keyframes nightmareLunge{0%{transform:scale(.06) translateY(70%);filter:brightness(0)}8%{transform:scale(.32) translateY(20%);filter:brightness(2.5)}14%{transform:scale(.25) translateY(10%);filter:brightness(.35)}24%{transform:scale(.9) translateY(0);filter:brightness(1.8)}31%{transform:scale(.72) translateX(-4%);filter:brightness(.6)}43%{transform:scale(1.45) translateX(2%);filter:brightness(1.7)}52%{transform:scale(1.15);filter:brightness(.45)}66%{transform:scale(2.05);filter:brightness(1.5)}80%,100%{transform:scale(2.65);filter:brightness(1)}}
+@keyframes nightmareLunge{0%{transform:scale(.03) translateY(85%);filter:brightness(0) blur(8px)}8%{transform:scale(.42) translateY(22%);filter:brightness(2.8) blur(1px)}13%{transform:scale(.24) translateY(12%);filter:brightness(.25)}20%{transform:scale(.78) translateY(1%);filter:brightness(1.4)}27%{transform:scale(.72) translateX(-3%);filter:brightness(.55)}36%{transform:scale(1.08) translateX(2%);filter:brightness(1.65)}45%{transform:scale(.96);filter:brightness(.55)}56%{transform:scale(1.03);filter:brightness(1)}68%{transform:scale(2.0);filter:brightness(1.6)}82%,100%{transform:scale(2.8);filter:brightness(1)}}
 @keyframes nightmareFlash{0%{opacity:1;background:#fff}2%{opacity:0}4%{opacity:1;background:#f00}6%{opacity:0}10%{opacity:.95;background:#fff}12%{opacity:0}17%{opacity:.85;background:#900}19%{opacity:0}33%{opacity:.7;background:#f00}35%{opacity:0}51%{opacity:1;background:#fff}53%{opacity:0}68%{opacity:.9;background:#d00000}70%{opacity:0}100%{opacity:0}}
 @keyframes mouthNightmare{from{transform:scaleY(.7) scaleX(1)}to{transform:scaleY(1.22) scaleX(1.08)}}
 
@@ -294,7 +294,7 @@ input[type=text]{background:#000;border:1px solid #00ff66;color:#00ff66;font-fam
 @keyframes titleTextGlitch{0%,91%,100%{transform:translate(0);filter:none}92%{transform:translate(5px,-2px);filter:hue-rotate(80deg)}93%{transform:translate(-5px,1px);filter:contrast(2)}94%{transform:translate(0);filter:none}}
 #jumpscare-overlay.scare-active{filter:contrast(1.35) saturate(1.6)}
 #jumpscare-overlay.scare-active .creature-head{animation:headSnap .09s steps(2,end) infinite alternate!important;filter:contrast(2.2) saturate(2.2) drop-shadow(0 0 65px #ff0000)!important}
-@keyframes headSnap{from{transform:scale(1.1) translate(0,0) rotate(-1deg)}to{transform:scale(1.55) translate(2vw,-1vh) rotate(1.4deg)}}
+@keyframes headSnap{0%{transform:translate(-50%,-50%) scale(.92) rotate(-1deg)}45%{transform:translate(-50%,-50%) scale(1.08) rotate(1.5deg)}72%{transform:translate(-50%,-50%) scale(1.62) rotate(-2deg)}100%{transform:translate(-50%,-50%) scale(1.42) rotate(1.4deg)}}
 
 
 /* Adaptive touch controls: enabled only on touch-first/mobile devices. */
@@ -459,7 +459,7 @@ body.touch-device .controls-grid{grid-template-columns:1fr 1fr}
     <div id="note-hint">HOLDING DOCUMENT • PRESS E OR ESC TO LOWER IT</div>
   </div>
   <!-- JUMPSCARE -->
-  <div id="jumpscare-overlay" aria-label="The Warden has caught you">
+  <div id="jumpscare-overlay" aria-label="The Warden has caught you" aria-hidden="true">
     <div class="jumpscare-flash"></div>
     <div class="jumpscare-static"></div>
     <div class="jumpscare-blood" aria-hidden="true">
@@ -543,7 +543,8 @@ var touchLookPointer = null, touchLookX = 0, touchLookY = 0, mobileControlsReady
 var entityMesh, entityParts = {};
 var monsterState = 'patrol';
 var monsterTargetPos = new THREE.Vector3(0, 0, 0);
-var entityPosition = new THREE.Vector3(12, 0, -14);
+var entityPosition = new THREE.Vector3(15, 0, 2.5);
+var monsterStairDirection = 0, monsterStairPhase = 0, monsterUsingStairs = false;
 var duckAmount = 0;
 
 var STALK_CHANCE = 0.30;
@@ -559,6 +560,7 @@ var fuseBoxMesh = null, leverMesh = null, elevatorMesh = null;
 var securityCams = [], activeCamIdx = 0, camRenderer, camScene;
 
 var audioCtx;
+var grainTimer = null, whispersTimer = null, controlsBound = false;
 
 function initAudio(){
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)({latencyHint:'interactive'});
@@ -824,10 +826,13 @@ function initScene(){
     gd.data[i+3] = 26;
   }
   gx.putImageData(gd, 0, 0);
-  var grain = document.createElement('div');
+  var oldGrain = document.getElementById('film-grain-overlay');
+  if (oldGrain) oldGrain.remove();
+  if (grainTimer) clearInterval(grainTimer);
+  var grain = document.createElement('div'); grain.id = 'film-grain-overlay';
   grain.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:3;background:radial-gradient(circle,rgba(0,0,0,0) 42%,rgba(0,0,0,0.8) 100%),url(' + gc.toDataURL() + ');';
   document.getElementById('game-container').appendChild(grain);
-  setInterval(function(){
+  grainTimer = setInterval(function(){
     grain.style.backgroundPosition = '0 0,' + Math.random() * 128 + 'px ' + Math.random() * 128 + 'px';
   }, 70);
 
@@ -885,20 +890,21 @@ function wallMat(len, h){
   var t = wallTex.clone(); t.needsUpdate = true; t.repeat.set(len / 3, h / 3);
   return new THREE.MeshStandardMaterial({ map: t, roughness: 0.95, color: 0xa5aab0 });
 }
-function box(w, h, d, x, y, z, mat, collide){
+function box(w, h, d, x, y, z, mat, collide, collisionFloor, windowRef){
   if (collide === undefined) collide = true;
   var m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
   m.position.set(x, y, z);
   m.castShadow = m.receiveShadow = true;
   scene.add(m);
-  if (collide) colliders.push({ minX: x - w/2, maxX: x + w/2, minZ: z - d/2, maxZ: z + d/2 });
+  if (collide) colliders.push({ minX: x - w/2, maxX: x + w/2, minZ: z - d/2, maxZ: z + d/2, floorY: collisionFloor || 0, windowRef: windowRef || null });
   return m;
 }
-function buildWall(horiz, fixed, from, to, ops){
-  var P = function(a, b, y0, y1){
+function buildWall(horiz, fixed, from, to, ops, floorBase){
+  floorBase = floorBase || 0;
+  var P = function(a, b, y0, y1, windowRef){
     if (b - a < 0.01) return;
     var L = b - a, c = (a + b) / 2, h = y1 - y0, m = wallMat(L, h), cl = y0 === 0;
-    return horiz ? box(L, h, WALL_T, c, y0 + h/2, fixed, m, cl) : box(WALL_T, h, L, fixed, y0 + h/2, c, m, cl);
+    return horiz ? box(L, h, WALL_T, c, floorBase + y0 + h/2, fixed, m, cl, floorBase, windowRef) : box(WALL_T, h, L, fixed, floorBase + y0 + h/2, c, m, cl, floorBase, windowRef);
   };
   var cur = from;
   ops.sort(function(a,b){ return a.at - b.at; });
@@ -906,28 +912,27 @@ function buildWall(horiz, fixed, from, to, ops){
     P(cur, o.at - 1.3, 0, WALL_H);
     if (o.type === 'door') {
       P(o.at - 1.3, o.at + 1.3, 3.0, WALL_H);
-      if (horiz) createDoor(o.at, fixed, 0);
-      else createDoor(fixed, o.at, Math.PI / 2);
+      if (floorBase === 0) {
+        if (horiz) createDoor(o.at, fixed, 0);
+        else createDoor(fixed, o.at, Math.PI / 2);
+      }
     } else {
-      P(o.at - 1.3, o.at + 1.3, 0, 0.9);
-      P(o.at - 1.3, o.at + 1.3, 2.4, WALL_H);
       var wx = horiz ? o.at : fixed, wz = horiz ? fixed : o.at;
-      var windowRecord = { type: 'window', position: new THREE.Vector3(wx, 0, wz), normal: horiz ? new THREE.Vector3(0, 0, 1) : new THREE.Vector3(1, 0, 0), broken: false, glassMesh: null };
+      var windowRecord = { type: 'window', position: new THREE.Vector3(wx, floorBase, wz), normal: horiz ? new THREE.Vector3(0, 0, 1) : new THREE.Vector3(1, 0, 0), broken: false, glassMesh: null, floorY: floorBase };
       windows.push(windowRecord);
-      // Restore the conspicuous vault-through windows: cracked glass, metal frame, and E prompt target.
+      // The lower window wall is a real collider only until its glass is broken.
+      P(o.at - 1.3, o.at + 1.3, 0, 0.9, windowRecord);
+      P(o.at - 1.3, o.at + 1.3, 2.4, WALL_H);
       var glass = new THREE.Mesh(new THREE.BoxGeometry(horiz ? 2.25 : .08, 1.35, horiz ? .08 : 2.25),
         new THREE.MeshBasicMaterial({color:0x182b30,transparent:true,opacity:.23,side:THREE.DoubleSide}));
-      glass.position.set(wx,1.65,wz); glass.userData={type:'window',windowRef:windowRecord}; scene.add(glass); interactables.push(glass); windowRecord.glassMesh=glass;
+      glass.position.set(wx, floorBase + 1.65, wz); glass.userData={type:'window',windowRef:windowRecord}; scene.add(glass); interactables.push(glass); windowRecord.glassMesh=glass;
       var frameMat=new THREE.MeshStandardMaterial({color:0x45484a,metalness:.72,roughness:.4});
       for(var fi=0;fi<2;fi++){
         var frame=new THREE.Mesh(new THREE.BoxGeometry(horiz? .1: .12,1.48,horiz? .12:.1),frameMat);
-        frame.position.set(wx+(horiz?(fi===0?-1.18:1.18):0),1.65,wz+(horiz?0:(fi===0?-1.18:1.18)));scene.add(frame);
+        frame.position.set(wx+(horiz?(fi===0?-1.18:1.18):0),floorBase+1.65,wz+(horiz?0:(fi===0?-1.18:1.18)));scene.add(frame);
       }
-      var cap = new THREE.Mesh(
-        new THREE.BoxGeometry(horiz ? 2.6 : 0.7, 0.06, horiz ? 0.7 : 2.6),
-        new THREE.MeshStandardMaterial({ color: 0x6a7076, roughness: 0.5 })
-      );
-      cap.position.set(wx, 0.93, wz); scene.add(cap);
+      var cap = new THREE.Mesh(new THREE.BoxGeometry(horiz ? 2.6 : 0.7, 0.06, horiz ? 0.7 : 2.6),new THREE.MeshStandardMaterial({ color: 0x6a7076, roughness: 0.5 }));
+      cap.position.set(wx, floorBase + 0.93, wz); scene.add(cap);
     }
     cur = o.at + 1.3;
   });
@@ -971,9 +976,28 @@ function buildLevelMap(){
   // Enclose the second-floor archive with real wall colliders. The stairway rises into the room,
   // so the entrance stays clear and no staircase is placed across a doorway.
   var upperWallMat=wallMat(24,3.6);
-  buildWall(true,-27,3,27,[]);
-  buildWall(true,-3,3,12.7,[]); buildWall(true,-3,17.3,27,[]);
-  buildWall(false,3,-27,-3,[]); buildWall(false,27,-27,-3,[]);
+  // Second-floor perimeter. These colliders belong to the upper floor only.
+  buildWall(true,-27,3,27,[],7.2);
+  buildWall(true,-3,3,12.7,[],7.2); buildWall(true,-3,17.3,27,[],7.2);
+  buildWall(false,3,-27,-3,[],7.2); buildWall(false,27,-27,-3,[],7.2);
+  // Several decayed archive rooms. Their broken-window openings can be vaulted through.
+  // Leave the stair shaft clear through this partition; the left/right windows are vaultable.
+  buildWall(true,-10,3,12.2,[{at:8,type:'window'}],7.2);
+  buildWall(true,-10,17.8,27,[{at:22,type:'window'}],7.2);
+  buildWall(true,-20,3,27,[{at:8,type:'window'},{at:22,type:'window'}],7.2);
+  // Keep the central stair landing open while splitting the left and right rooms.
+  buildWall(false,15,-27,-17,[{at:-22,type:'window'}],7.2);
+  // Do not hang a partition over the stair run itself; the landing stays open.
+  // A dark ceiling and weak, flickering lamps make the upstairs rooms feel enclosed.
+  var upperCeiling=new THREE.Mesh(new THREE.PlaneGeometry(24,24),new THREE.MeshStandardMaterial({map:ct,roughness:1,side:THREE.DoubleSide}));
+  upperCeiling.rotation.x=Math.PI/2; upperCeiling.position.set(15,10.85,-15); scene.add(upperCeiling);
+  for(var uli=0;uli<4;uli++){
+    var ulx=8+(uli%2)*14, ulz= -7-Math.floor(uli/2)*14;
+    var upanel=new THREE.Mesh(new THREE.BoxGeometry(1.4,.07,.35),new THREE.MeshBasicMaterial({color:uli%2?0x7b1217:0x9c9990}));
+    upanel.position.set(ulx,10.7,ulz);scene.add(upanel);
+    var uglow=new THREE.PointLight(uli%2?0x9b0710:0x9eafbd,.28,9,2);uglow.position.set(ulx,10.1,ulz);scene.add(uglow);
+    flickerLights.push({l:uglow,panel:upanel,base:.28,color:uli%2?0x9b0710:0x9eafbd,mode:Math.random()});
+  }
   // Horror-themed iron-and-rotting-wood stairs, with chipped dark treads and blood-rust streaks.
   var stairMat=new THREE.MeshStandardMaterial({color:0x292426,roughness:1,metalness:.08});
   var railMat=new THREE.MeshStandardMaterial({color:0x171416,metalness:.68,roughness:.72});
@@ -1026,10 +1050,23 @@ function buildLevelMap(){
   ]);
 
   // Sub-dividers creating more rooms in the central zone
+  // Restore central room access while keeping the stair-room entrance clear of a door.
   buildWall(false, -12, -25, 25, [{ at: 0, type: 'door' }]);
-  buildWall(false, 12, -25, 25, [{ at: 0, type: 'door' }]);
-  buildWall(true, -12, -25, 25, [{ at: 0, type: 'door' }]);
-  buildWall(true, 12, -25, 25, [{ at: 0, type: 'door' }]);
+  buildWall(false, 12, -HALF, -16, []);
+  // Leave the stair-room side entrance as a clear, door-free opening.
+  // The door itself is moved to the south wall of the stair room, away from the stair flight.
+  buildWall(false, 12, -16, -1.3, []);
+  buildWall(false, 12, 1.3, 4, []);
+  buildWall(false, 12, 4, HALF, []);
+  // Keep a stair-width opening around x=15 through the cross-wall at z=-12,
+  // while restoring the door into the adjacent central room at x=0.
+  buildWall(true, -12, -25, -1.3, []);
+  buildWall(true, -12, -1.3, 1.3, [{ at: 0, type: 'door' }]);
+  buildWall(true, -12, 1.3, 13.7, []);
+  buildWall(true, -12, 16.3, 25, []);
+  // Keep the central room door and place a separate entrance into the stair room at x=15, z=12.
+  // This door is well south of the first stair tread and cannot obstruct the staircase itself.
+  buildWall(true, 12, -25, 25, [{ at: 0, type: 'door' }, { at: 15, type: 'door' }]);
 
   cabinets(-49.4, -15, 9, true);
   cabinets(49.4, 5, 9, true);
@@ -1177,9 +1214,18 @@ function createDoor(x, z, rotationY){
   colliders.push({ minX: x - hw, maxX: x + hw, minZ: z - hd, maxZ: z + hd, door: data });
 }
 
-function pushCircleOutOfBoxes(p, r){
+function pushCircleOutOfBoxes(p, r, isMonster){
+  // A 2-D collider must only affect the floor it was built for; otherwise downstairs walls block the loft.
+  var referenceY = isMonster ? p.y + 1.65 : p.y;
+  var hereFloor = getWalkableFloorHeight(p.x,p.z,referenceY);
+  var onUpperFloor = referenceY > 4.5 && hereFloor >= 7.1;
   colliders.forEach(function(c){
     if (c.door && c.door.isOpen) return;
+    if (c.windowRef && c.windowRef.broken) return;
+    if (isMonster && monsterUsingStairs && (c.floorY || 0) < 3.6) return;
+    if ((c.floorY || 0) >= 3.6 && !onUpperFloor) return;
+    if ((c.floorY || 0) < 3.6 && onUpperFloor) return;
+    if (isMonster && c.windowRef) { breakWindowGlass(c.windowRef); return; }
     var cx = Math.max(c.minX, Math.min(p.x, c.maxX));
     var cz = Math.max(c.minZ, Math.min(p.z, c.maxZ));
     var dx = p.x - cx, dz = p.z - cz, d2 = dx * dx + dz * dz;
@@ -1198,8 +1244,8 @@ function pushCircleOutOfBoxes(p, r){
     }
   });
 }
-function resolveCollisions(){ pushCircleOutOfBoxes(camera.position, 0.38); }
-function resolveMonsterCollisions(){ pushCircleOutOfBoxes(entityPosition, 0.6); }
+function resolveCollisions(){ pushCircleOutOfBoxes(camera.position, 0.38, false); }
+function resolveMonsterCollisions(){ pushCircleOutOfBoxes(entityPosition, 0.6, true); }
 
 /* ============ FUSES ============ */
 function makeFuse(x, z, id, floorY){
@@ -1255,10 +1301,10 @@ function spawnFuses(){
     [-40,18], [40,18], [-22,25], [22,25], [0,-38], [0,38],
     [-35,-5], [35,-5], [-42,0], [42,0], [0,-42], [0,42], [-28,8], [28,-8]
   ];
-  var upperSpots = [[8,-8],[22,-8],[8,-22],[22,-22],[15,-20],[10,-15],[20,-15]];
+  var upperSpots = [[8,-8],[22,-8],[8,-22],[22,-22],[10,-14],[20,-14]];
   function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
   shuffle(groundSpots); shuffle(upperSpots);
-  var chosen=[], minDistance=34, upstairsChance=Math.random()<0.38;
+  var chosen=[], minDistance=30, upstairsChance=Math.random()<0.62;
   if(upstairsChance){
     var up=upperSpots[0]; chosen.push({x:up[0],z:up[1],y:7.2});
   }
@@ -1522,10 +1568,7 @@ function spawnAnimatedMonster(){
     M(new THREE.BoxGeometry(0.015, 0.055 + (ti % 2 ? 0.02 : 0), 0.015), bone, ti * 0.022, -0.03, 0.13, jaw);
     M(new THREE.BoxGeometry(0.015, 0.065 + (ti % 2 ? 0 : 0.02), 0.015), bone, ti * 0.022, 0.17, 0.21, neck);
   }
-  var glow = new THREE.PointLight(0xff1608, 5.5, 20);
-  glow.position.set(0, 0.35, 0.42);
-  neck.add(glow);
-  entityParts.glow = glow;
+  // Removed the red point-light aura around the Warden; its eyes remain visible.
 
   [-1, 1].forEach(function(side){
     var arm = new THREE.Group();
@@ -1590,6 +1633,8 @@ function updateStanceUISafe(){
   if(s) s.innerText=isCrouching?'STANCE: CROUCHING (STEALTH)':'STANCE: WALKING';
 }
 function setupControls(){
+  if (controlsBound) return;
+  controlsBound = true;
   document.addEventListener('keydown', function(e){
     if (isDead || !gameStarted) return;
     if(isNoteOpen){ if(e.code==='Escape'||e.code==='KeyE'){e.preventDefault();closeNoteReader();} return; }
@@ -1690,7 +1735,7 @@ function breakWindowGlass(w){
   // A brief spray of shards sells the break, then the opening remains clear and safe.
   for(var i=0;i<13;i++){
     var shard=new THREE.Mesh(new THREE.TetrahedronGeometry(0.08+Math.random()*0.11),new THREE.MeshBasicMaterial({color:i%3===0?0xb8d7dd:0x6f9ba5,transparent:true,opacity:.82}));
-    shard.position.set(w.position.x+(Math.random()-.5)*1.9,1.15+Math.random()*1.1,w.position.z+(Math.random()-.5)*.12);
+    shard.position.set(w.position.x+(Math.random()-.5)*1.9,w.position.y+1.15+Math.random()*1.1,w.position.z+(Math.random()-.5)*.12);
     scene.add(shard); windowShards.push({mesh:shard,vel:new THREE.Vector3((Math.random()-.5)*4,1+Math.random()*3,(Math.random()-.5)*4),life:.85});
   }
   try{playSound(880,'triangle',0.22,0.32);setTimeout(function(){playSound(190,'sawtooth',0.45,0.22);},55);}catch(e){}
@@ -1703,7 +1748,7 @@ function vaultThroughWindow(w){
   var relN=rel.dot(w.normal);var side=relN>=0?-1:1;
   isVaulting=true;vaultProgress=0;vaultStartPos=camera.position.clone();
   vaultEndPos=camera.position.clone().addScaledVector(w.normal,side*2.4-relN);
-  vaultEndPos.y=STAND_HEIGHT + getWalkableFloorHeight(vaultEndPos.x,vaultEndPos.z);
+  vaultEndPos.y=(vrSessionActive()?0:(isCrouching?CROUCH_HEIGHT:STAND_HEIGHT)) + getWalkableFloorHeight(vaultEndPos.x,vaultEndPos.z,camera.position.y);
   playVaultSound();
   if(firstBreak){
     // The first shatter is a loud event: the Warden is drawn to the broken window.
@@ -1890,6 +1935,106 @@ function checkElevatorActivation(){
     exitUnlocked = true;
   }
 }
+function disposeThreeScene(oldScene){
+  if (!oldScene || !oldScene.traverse) return;
+  var geometries = new Set(), materials = new Set(), textures = new Set();
+  oldScene.traverse(function(o){
+    if (o.geometry) geometries.add(o.geometry);
+    if (o.material) {
+      var list = Array.isArray(o.material) ? o.material : [o.material];
+      list.forEach(function(m){
+        if (!m || materials.has(m)) return;
+        materials.add(m);
+        Object.keys(m).forEach(function(k){ if (m[k] && m[k].isTexture) textures.add(m[k]); });
+      });
+    }
+  });
+  textures.forEach(function(t){ try { t.dispose(); } catch(e){} });
+  materials.forEach(function(m){ try { m.dispose(); } catch(e){} });
+  geometries.forEach(function(g){ try { g.dispose(); } catch(e){} });
+}
+
+/* Restart in-place instead of reloading the Apps Script iframe, which can show a blank/blue page. */
+function retryGame(){
+  var button = document.querySelector('#gameover-screen .btn');
+  if (button) { button.disabled = true; button.textContent = 'REENTERING BLACKWOOD...'; }
+  try {
+    // Stop the old render loop and release its GPU resources.
+    var oldRenderer = renderer, oldCamRenderer = camRenderer, oldScene = scene;
+    if (oldRenderer) {
+      try { oldRenderer.setAnimationLoop(null); } catch(e){}
+      try { var xrSession = oldRenderer.xr && oldRenderer.xr.getSession && oldRenderer.xr.getSession(); if (xrSession) xrSession.end(); } catch(e){}
+    }
+    if (oldCamRenderer) { try { oldCamRenderer.dispose(); } catch(e){} }
+    disposeThreeScene(oldScene);
+    if (oldRenderer) {
+      var oldCanvas = oldRenderer.domElement;
+      try { oldRenderer.dispose(); } catch(e){}
+      if (oldCanvas && oldCanvas.parentNode) oldCanvas.parentNode.removeChild(oldCanvas);
+    }
+    if (grainTimer) { clearInterval(grainTimer); grainTimer = null; }
+    var grainOverlay = document.getElementById('film-grain-overlay');
+    if (grainOverlay) grainOverlay.remove();
+
+    // Reset all run-specific state before generating a brand-new randomized level.
+    battery = 100; stamina = 100; fusesCollected = 0; notesFound = 0;
+    isNoteOpen = false; fusesInserted = false; codeEntered = false; leverPulled = false;
+    exitUnlocked = false; alarmActive = false; moveForward = moveBackward = moveLeft = moveRight = false;
+    isSprinting = false; isCrouching = false; isCranking = false; isTerminalOpen = false;
+    isDead = false; isPaused = false; gameStarted = true;
+    isVaulting = false; vaultProgress = 0; vaultStartPos = null; vaultEndPos = null;
+    playerVelocityY = 0; isGrounded = true; velocity.set(0,0,0); direction.set(0,0,0);
+    turnL = turnR = lookU = lookD = false;
+    codeDigits = ['?','?','?']; stepTimer = 0; lastCrank = 0;
+    interactables = []; doors = []; windows = []; windowShards = []; fuseObjects = [];
+    colliders = []; flickerLights = []; securityCams = []; activeCamIdx = 0;
+    monsterState = 'patrol'; monsterTargetPos.set(0,0,0); entityPosition.set(15,0,2.5);
+    entityMesh = null; entityParts = {}; monsterStairDirection = 0; monsterStairPhase = 0; monsterUsingStairs = false;
+    stalkTimer = 0; stalkAngle = 0; stalkDir = 1; stalkRadius = 9;
+    lastStalkSound = 0; stalkingCooldown = 0; lastMonsterPos.set(40,0,40); stuckTimer = 0;
+    monsterScareCooldown = 0; monsterAnimTime = 0; monsterLastGrowl = 0;
+    glassNoiseTimer = 0; glassNoisePos.set(0,0,0); prevTime = performance.now();
+    isCranking = false; duckAmount = 0;
+    fuseBoxMesh = null; leverMesh = null; elevatorMesh = null;
+
+    var overlay = document.getElementById('jumpscare-overlay');
+    if (overlay) { overlay.style.display = 'none'; overlay.setAttribute('aria-hidden','true'); overlay.classList.remove('scare-active'); }
+    var gameOver = document.getElementById('gameover-screen');
+    if (gameOver) {
+      gameOver.style.display = 'none';
+      var title = gameOver.querySelector('.death-title');
+      var sub = gameOver.querySelector('.death-sub');
+      var btn = gameOver.querySelector('.btn');
+      if (title) { title.innerText = 'YOU WERE CONSUMED'; title.style.cssText = ''; }
+      if (sub) sub.innerText = 'The entity found you in the darkness of Floor B3.';
+      if (btn) { btn.innerText = 'TRY AGAIN'; btn.setAttribute('onclick','retryGame()'); btn.disabled = false; }
+    }
+    var term = document.getElementById('terminal-ui'); if (term) term.style.display = 'none';
+    var noteReader = document.getElementById('note-reader'); if (noteReader) noteReader.classList.remove('open');
+    var termInput = document.getElementById('term-input'); if (termInput) termInput.value = '';
+    var toast = document.getElementById('toast'); if (toast) toast.style.opacity = '0';
+    var objective = document.getElementById('objective'); if (objective) objective.innerText = 'OBJECTIVE: Collect 3 fuses.';
+    var titleScreen = document.getElementById('title-screen'); if (titleScreen) titleScreen.style.display = 'none';
+    var settingsScreen = document.getElementById('settings-screen'); if (settingsScreen) settingsScreen.style.display = 'none';
+    var ui = document.getElementById('ui-overlay'); if (ui) ui.style.display = 'flex';
+    var crosshair = document.getElementById('crosshair'); if (crosshair) crosshair.style.display = 'block';
+    document.body.classList.add('game-active');
+
+    scene = null; camera = null; renderer = null; flashlight = null; flashlightTarget = null;
+    camRenderer = null; camScene = null; alarmLight = null; audioPrimed = audioPrimed || false;
+    initScene();
+    if (camera) { camera.position.set(0, STAND_HEIGHT, 0); camera.rotation.set(0,0,0); camera.rotation.order = 'YXZ'; }
+    if (button) { button.disabled = false; }
+    if (!document.body.classList.contains('touch-device') && !(renderer && renderer.xr && renderer.xr.isPresenting)) {
+      try { var lock = document.body.requestPointerLock(); if (lock && lock.catch) lock.catch(function(){}); } catch(e){}
+    }
+  } catch(err) {
+    console.error('Retry failed:', err);
+    if (button) { button.disabled = false; button.textContent = 'TRY AGAIN'; }
+    showTransientMsg('Restart failed. Please refresh the game page once and try again.');
+  }
+}
+
 function triggerVictory(){
   isDead = true;
   try { document.exitPointerLock(); } catch(e) {}
@@ -1898,16 +2043,18 @@ function triggerVictory(){
   g.querySelector('.death-title').style.cssText = 'color:#00ff66;text-shadow:0 0 15px #00ff66';
   g.querySelector('.death-sub').innerText = 'The elevator groans upward. Behind the sealed door, Daniel is alive. Below, the Warden goes silent... for now.';
   g.querySelector('.btn').innerText = 'PLAY AGAIN';
-  g.querySelector('.btn').setAttribute('onclick', 'location.reload()');
+  g.querySelector('.btn').setAttribute('onclick', 'retryGame()');
   g.style.display = 'flex';
 }
 
 /* ================== PLAYER ================== */
-function getWalkableFloorHeight(x,z){
-  // Stairs run from z=+3 at ground level to z=-15 at the loft.
-  if(x>12.8 && x<17.2 && z<=3 && z>=-15) return Math.max(0,Math.min(7.2,((3-z)/18)*7.2));
-  // Upper archive loft: walkable platform connected directly to the top stair.
-  if(x>=3 && x<=27 && z<=-15 && z>=-27) return 7.2;
+function getWalkableFloorHeight(x,z,referenceY){
+  // referenceY prevents the overlapping loft footprint from teleporting ground-floor players upward.
+  if(referenceY===undefined || referenceY===null) referenceY=STAND_HEIGHT;
+  // A broad, forgiving stair lane reaches the floor on both ends; height matches the visible treads.
+  if(x>12.35 && x<17.65 && z<=3.2 && z>=-15.1) return Math.max(0,Math.min(7.2,((3-z)/18)*7.2));
+  // The loft spans the whole walled rectangle, but only players already on that level can use it.
+  if(x>=2.3 && x<=27.7 && z<=-2.3 && z>=-27.7 && referenceY>4.5) return 7.2;
   return 0;
 }
 function updatePlayer(delta){
@@ -1919,7 +2066,7 @@ function updatePlayer(delta){
   if (isVaulting) {
     vaultProgress += delta * 2.5;
     camera.position.lerpVectors(vaultStartPos, vaultEndPos, vaultProgress);
-    camera.position.y = STAND_HEIGHT + Math.sin(vaultProgress * Math.PI) * 0.4;
+    camera.position.y += Math.sin(vaultProgress * Math.PI) * 0.4;
     if (vaultProgress >= 1.0) {
       isVaulting = false;
       camera.position.copy(vaultEndPos);
@@ -1933,7 +2080,7 @@ function updatePlayer(delta){
 
   playerVelocityY += GRAVITY * delta;
   camera.position.y += playerVelocityY * delta;
-  var targetEyeHeight = (vrSessionActive() ? 0 : (isCrouching ? CROUCH_HEIGHT : STAND_HEIGHT)) + getWalkableFloorHeight(camera.position.x,camera.position.z);
+  var targetEyeHeight = (vrSessionActive() ? 0 : (isCrouching ? CROUCH_HEIGHT : STAND_HEIGHT)) + getWalkableFloorHeight(camera.position.x,camera.position.z,camera.position.y);
   if (camera.position.y <= targetEyeHeight) {
     camera.position.y = targetEyeHeight;
     playerVelocityY = 0;
@@ -2043,8 +2190,11 @@ function updateMonster(delta){
   if(!entityMesh || !camera || isDead) return;
   monsterAnimTime += delta;
   monsterScareCooldown=Math.max(0,monsterScareCooldown-delta);
-  var p=new THREE.Vector3(camera.position.x,0,camera.position.z);
-  var m=new THREE.Vector3(entityPosition.x,0,entityPosition.z);
+  var playerFloor=getWalkableFloorHeight(camera.position.x,camera.position.z,camera.position.y);
+  var p=new THREE.Vector3(camera.position.x,playerFloor,camera.position.z);
+  var monsterFloor=getWalkableFloorHeight(entityPosition.x,entityPosition.z,entityPosition.y+1.65);
+  entityPosition.y=monsterFloor;
+  var m=entityPosition.clone();
   var dist=m.distanceTo(p);
   var toPlayer=p.clone().sub(m);
   if(glassNoiseTimer>0){
@@ -2057,7 +2207,27 @@ function updateMonster(delta){
   } else if(monsterState==='investigate' && entityPosition.distanceTo(monsterTargetPos)<1.2){
     monsterState='patrol';
   }
-  var target=monsterState==='patrol' ? monsterTargetPos : monsterTargetPos;
+  var target=monsterTargetPos;
+  // When player and Warden are on different floors, force a real trip along the stairwell.
+  var playerIsUp=playerFloor>6.8, monsterIsUp=monsterFloor>6.8;
+  var desiredStairDirection=playerIsUp&&!monsterIsUp?1:(!playerIsUp&&monsterIsUp?-1:0);
+  // Latch the direction until the Warden reaches the other landing; do not cancel halfway up/down.
+  if(monsterStairDirection===0 && desiredStairDirection!==0){monsterStairDirection=desiredStairDirection;monsterStairPhase=0;}
+  monsterUsingStairs=monsterStairDirection!==0;
+  var stairBottom=new THREE.Vector3(15,0,2.5), stairTop=new THREE.Vector3(15,7.2,-15);
+  if(monsterStairDirection===1){
+    var db=Math.hypot(entityPosition.x-stairBottom.x,entityPosition.z-stairBottom.z);
+    if(monsterStairPhase===0 && db<1.7)monsterStairPhase=1;
+    if(monsterStairPhase===0)target=stairBottom;
+    else if(Math.hypot(entityPosition.x-stairTop.x,entityPosition.z-stairTop.z)>1.8)target=stairTop;
+    else {monsterStairDirection=0;monsterStairPhase=0;monsterUsingStairs=false;target=monsterTargetPos;}
+  } else if(monsterStairDirection===-1){
+    var dt=Math.hypot(entityPosition.x-stairTop.x,entityPosition.z-stairTop.z);
+    if(monsterStairPhase===0 && dt<1.8)monsterStairPhase=1;
+    if(monsterStairPhase===0)target=stairTop;
+    else if(Math.hypot(entityPosition.x-stairBottom.x,entityPosition.z-stairBottom.z)>1.8)target=stairBottom;
+    else {monsterStairDirection=0;monsterStairPhase=0;monsterUsingStairs=false;target=monsterTargetPos;}
+  }
   var dx=target.x-entityPosition.x, dz=target.z-entityPosition.z;
   var d=Math.sqrt(dx*dx+dz*dz);
   if(d>0.12){
@@ -2069,6 +2239,7 @@ function updateMonster(delta){
     entityPosition.x += dx/d*step;
     entityPosition.z += dz/d*step;
     resolveMonsterCollisions();
+    entityPosition.y=getWalkableFloorHeight(entityPosition.x,entityPosition.z,entityPosition.y+1.65);
     entityMesh.rotation.y=Math.atan2(dx,dz);
   }
   entityMesh.position.copy(entityPosition);
@@ -2081,7 +2252,7 @@ function updateMonster(delta){
   if(entityParts.armR) entityParts.armR.rotation.x=-Math.sin(monsterAnimTime*7)*0.18;
   if(entityParts.legL) entityParts.legL.rotation.x=Math.sin(monsterAnimTime*8)*0.25*(d>0.12?1:0.15);
   if(entityParts.legR) entityParts.legR.rotation.x=-Math.sin(monsterAnimTime*8)*0.25*(d>0.12?1:0.15);
-  if(entityParts.glow) entityParts.glow.intensity=2.5+Math.random()*2.5+(dist<10?3:0);
+  // No proximity glow: the Warden should not cast a red halo on nearby walls.
   if(dist<2.05 && monsterScareCooldown<=0) triggerJumpscare();
   if(dist<32 && performance.now()-monsterLastGrowl>2600){ monsterLastGrowl=performance.now(); try{playSound(48,'sawtooth',0.55,0.55);}catch(e){} }
 }
@@ -2092,26 +2263,27 @@ function triggerJumpscare(){
   try{document.exitPointerLock();}catch(e){}
   var overlay=document.getElementById('jumpscare-overlay');
   overlay.style.display='flex';
+  overlay.setAttribute('aria-hidden','false');
   overlay.classList.remove('scare-active');
   void overlay.offsetWidth;
   overlay.classList.add('scare-active');
   try{
     initAudio();
-    var now=audioCtx.currentTime, osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
-    osc.type='sawtooth'; osc.frequency.setValueAtTime(190,now); osc.frequency.exponentialRampToValueAtTime(31,now+1.1);
-    gain.gain.setValueAtTime(0.0001,now); gain.gain.exponentialRampToValueAtTime(0.85,now+0.025); gain.gain.exponentialRampToValueAtTime(0.0001,now+1.7);
-    osc.connect(gain); gain.connect(OUT()); osc.start(now); osc.stop(now+1.72);
+    // Use the layered jumpscare effect already defined in this game.
+    playJumpscareSound();
   }catch(e){}
   setTimeout(function(){
-    overlay.style.display='none'; overlay.classList.remove('scare-active');
+    overlay.style.display='none';
+    overlay.setAttribute('aria-hidden','true');
+    overlay.classList.remove('scare-active');
     var g=document.getElementById('gameover-screen');
     g.querySelector('.death-title').innerText='THE WARDEN FOUND YOU';
     g.querySelector('.death-title').style.cssText='color:#ff0000;text-shadow:0 0 18px #f00,0 0 45px #900;animation:captionGlitch .07s steps(2,end) infinite';
     g.querySelector('.death-sub').innerText='You heard him breathing. You turned too late. He was already there.';
     g.querySelector('.btn').innerText='TRY AGAIN';
-    g.querySelector('.btn').setAttribute('onclick','location.reload()');
+    g.querySelector('.btn').setAttribute('onclick','retryGame()');
     g.style.display='flex';
-  },2200);
+  },2750);
 }
 
 /* Adaptive mobile controls: touch-first devices get a joystick, drag-look and action buttons. */
@@ -2306,7 +2478,8 @@ function initWhispers(){
   var el=document.getElementById('title-whisper');
   var words=['IT KNOWS YOU ARE HERE','DO NOT LOOK BEHIND YOU','HE IS ON THE OTHER FLOOR','DANIEL IS STILL BREATHING'];
   var i=0;
-  if(el) { el.textContent=words[0]; setInterval(function(){i=(i+1)%words.length;if(el && !gameStarted)el.textContent=words[i];},4200); }
+  if (whispersTimer) clearInterval(whispersTimer);
+  if(el) { el.textContent=words[0]; whispersTimer=setInterval(function(){i=(i+1)%words.length;if(el && !gameStarted)el.textContent=words[i];},4200); }
 }
 function togglePause(){
   isPaused=!isPaused;
